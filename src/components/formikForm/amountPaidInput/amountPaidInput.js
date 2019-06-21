@@ -1,7 +1,7 @@
 import React from 'react';
 import SelectInput from '../selectInput/selectInput';
 
-const selectLabels = ['prepaid', '$10', '$35', 'other'];
+const selectLabels = ['Prepaid', '$10', '$35', 'Other'];
 
 const AmountPaidInput = props => (
   <SelectInput
