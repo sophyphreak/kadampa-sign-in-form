@@ -17,7 +17,7 @@ const SelectInput = ({ value, sectionLabel, selectLabels, componentName }) => (
     {value === 'Other' && (
       <BasicInput
         componentName={`other.${componentName}`}
-        placeholder="Please tell me more..."
+        placeholder="Please tell us more..."
         autoFocus={true}
       />
     )}
