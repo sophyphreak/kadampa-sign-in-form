@@ -6,7 +6,7 @@ const SignInSchema = Yup.object().shape({
     .max(100, 'Too Long!')
     .required('Required'),
   email: Yup.string(),
-  heardAboutUs: Yup.string().max(50, 'Too Long!'),
+  heardAboutUs: Yup.string(),
   amountPaid: Yup.string(),
   paymentMethod: Yup.string()
 });
