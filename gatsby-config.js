@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Kadampa Meditation Sign In`,
+    title: `Hi! Please sign in :-)`,
     description: `Houston Kadampa meditation group sign in sheet`,
     author: `Andrew Horn`
   },
