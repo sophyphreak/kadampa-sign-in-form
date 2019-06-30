@@ -6,9 +6,16 @@ import BasicInput from '../basicInput/basicInput';
 
 const SelectInput = ({ value, sectionLabel, selectLabels, componentName }) => (
   <>
-    <Label for={componentName}>{sectionLabel}</Label>
+    <Label for={componentName} style={{ fontSize: '1.5em' }}>
+      {sectionLabel}
+    </Label>
     <br />
-    <Input tag={Field} component="select" name={componentName}>
+    <Input
+      tag={Field}
+      style={{ fontSize: '1.5em' }}
+      component="select"
+      name={componentName}
+    >
       <option value="">Please select</option>
       {selectLabels.map(label => (
         <Select label={label} />

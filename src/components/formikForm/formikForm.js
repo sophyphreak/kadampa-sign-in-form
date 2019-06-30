@@ -16,7 +16,7 @@ const FormikForm = props => (
     {({ values, errors, touched, isSubmitting }) => (
       <Form>
         <FormGroup>
-          <Col sm="12" md={{ size: 8, offset: 2 }}>
+          <Col sm="12" md={{ size: 10, offset: 1 }}>
             <input type="hidden" value="for disrupting autocomplete" />
             <Modal isOpen={props.successModal} centered={true}>
               <ModalBody>Success!</ModalBody>
@@ -33,7 +33,7 @@ const FormikForm = props => (
             <br />
             <Button
               type="submit"
-              style={{ backgroundColor: 'rebeccapurple' }}
+              style={{ backgroundColor: 'rebeccapurple', fontSize: '2em' }}
               disabled={isSubmitting}
             >
               Submit

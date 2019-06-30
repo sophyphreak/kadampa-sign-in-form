@@ -12,7 +12,9 @@ const BasicInput = ({
   placeholder = ''
 }) => (
   <>
-    <Label for={componentName}>{label}</Label>
+    <Label for={componentName} style={{ fontSize: '1.5em' }}>
+      {label}
+    </Label>
     <Input
       autoFocus={autoFocus}
       type={type}
@@ -24,6 +26,7 @@ const BasicInput = ({
       onKeyPress={e => {
         e.key === 'Enter' && e.preventDefault();
       }}
+      style={{ fontSize: '1.5em' }}
     />
     <FormFeedback>{error}</FormFeedback>
   </>
