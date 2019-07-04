@@ -19,7 +19,9 @@ const FormikForm = props => (
           <Col sm="12" md={{ size: 10, offset: 1 }}>
             <input type="hidden" value="for disrupting autocomplete" />
             <Modal isOpen={props.successModal} centered={true}>
-              <ModalBody>Success!</ModalBody>
+              <ModalBody style={{ fontSize: '3em', textAlign: 'center' }}>
+                Ok!
+              </ModalBody>
             </Modal>
             <NameInput error={errors.name} touched={touched.name} />
             <br />
