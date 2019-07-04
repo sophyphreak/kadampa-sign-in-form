@@ -14,6 +14,7 @@ class SignInForm extends Component {
     super(props);
     this.state = {
       personList: [],
+      oldLists: [],
       successModal: false
     };
     this.addSignIn = this.addSignIn.bind(this);
@@ -21,8 +22,8 @@ class SignInForm extends Component {
     this.downloadData = this.downloadData.bind(this);
   }
   componentDidMount() {
-    const personList = getLocalStorage();
-    this.setState(() => ({ personList }));
+    const { personList = [], oldLists = [] } = getLocalStorage();
+    this.setState(() => ({ personList, oldLists }));
   }
   addSignIn(person) {
     this.setState({ successModal: true });
@@ -30,16 +31,19 @@ class SignInForm extends Component {
     const { personList } = this.state;
     personList.push(person);
     this.setState(() => ({ personList }));
-    localStorage.setItem('local', JSON.stringify(personList));
+    const oldLists = this.state.oldLists;
+    localStorage.setItem('local', JSON.stringify({ personList, oldLists }));
     setTimeout(() => {
       this.setState({ successModal: false });
     }, 1500);
     window.scrollTo(0, 0);
   }
   clearState() {
+    const oldLists = this.state.oldLists.concat(this.state.personList);
     const personList = [];
-    this.setState(() => ({ personList }));
+    this.setState(() => ({ personList, oldLists }));
     localStorage.clear();
+    localStorage.setItem('local', JSON.stringify({ personList, oldLists }));
   }
   downloadData() {
     const personList = this.state.personList;
