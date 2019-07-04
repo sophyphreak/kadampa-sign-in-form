@@ -1,9 +1,8 @@
-const getLocalStorage = () => {
-  let local = { personList: [], oldLists: [] };
-  if (!JSON.parse(localStorage.getItem('local'))) {
-    return local;
+const getLocalStorage = itemName => {
+  if (!JSON.parse(localStorage.getItem(itemName))) {
+    return [];
   }
-  return JSON.parse(localStorage.getItem('local'));
+  return JSON.parse(localStorage.getItem(itemName));
 };
 
 export default getLocalStorage;

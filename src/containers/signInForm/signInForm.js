@@ -14,7 +14,6 @@ class SignInForm extends Component {
     super(props);
     this.state = {
       personList: [],
-      oldLists: [],
       successModal: false
     };
     this.addSignIn = this.addSignIn.bind(this);
@@ -22,8 +21,8 @@ class SignInForm extends Component {
     this.downloadData = this.downloadData.bind(this);
   }
   componentDidMount() {
-    const { personList = [], oldLists = [] } = getLocalStorage();
-    this.setState(() => ({ personList, oldLists }));
+    const personList = getLocalStorage('personList');
+    this.setState(() => ({ personList }));
   }
   addSignIn(person) {
     this.setState({ successModal: true });
@@ -31,19 +30,20 @@ class SignInForm extends Component {
     const { personList } = this.state;
     personList.push(person);
     this.setState(() => ({ personList }));
-    const oldLists = this.state.oldLists;
-    localStorage.setItem('local', JSON.stringify({ personList, oldLists }));
+    localStorage.setItem('personList', JSON.stringify(personList));
     setTimeout(() => {
       this.setState({ successModal: false });
     }, 1500);
     window.scrollTo(0, 0);
   }
   clearState() {
-    const oldLists = this.state.oldLists.concat(this.state.personList);
+    const oldLists = getLocalStorage('oldLists');
+    oldLists.push(...this.state.personList);
     const personList = [];
-    this.setState(() => ({ personList, oldLists }));
+    this.setState(() => ({ personList }));
     localStorage.clear();
-    localStorage.setItem('local', JSON.stringify({ personList, oldLists }));
+    localStorage.setItem('personList', JSON.stringify(personList));
+    localStorage.setItem('oldLists', JSON.stringify(oldLists));
   }
   downloadData() {
     const personList = this.state.personList;

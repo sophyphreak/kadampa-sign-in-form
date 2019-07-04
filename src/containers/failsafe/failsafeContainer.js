@@ -6,7 +6,7 @@ import getLocalStorage from '../getLocalStorage/getLocalStorage';
 
 const FailsafeContainer = () => {
   const downloadData = () => {
-    const { oldLists } = getLocalStorage();
+    const oldLists = getLocalStorage('oldLists');
     downloadXlsx(oldLists);
   };
 
