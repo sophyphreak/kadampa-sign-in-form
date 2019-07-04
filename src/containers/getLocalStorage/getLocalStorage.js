@@ -1,5 +1,5 @@
 const getLocalStorage = () => {
-  let local = [];
+  let local = { personList: [], oldLists: [] };
   if (!JSON.parse(localStorage.getItem('local'))) {
     return local;
   }

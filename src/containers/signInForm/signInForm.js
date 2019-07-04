@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 
 import FormikForm from '../../components/formikForm/formikForm';
 import signInSchema from './signInSchema';
-import downloadXlsx from './downloadXlsx';
+import downloadXlsx from '../downloadXlsx/downloadXlsx';
 import BigSpace from '../../components/bigSpace/bigSpace';
 import AdminButtons from '../../components/adminButtons/adminButtons';
 import formInitialValues from './formInitialValues';
-import getLocalStorage from './getLocalStorage';
+import getLocalStorage from '../getLocalStorage/getLocalStorage';
 import preparePerson from './preparePerson';
 
 class SignInForm extends Component {
