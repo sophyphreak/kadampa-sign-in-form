@@ -39,13 +39,15 @@ const FormikForm = props => (
             <br />
             <br />
             <br />
-            <Button
-              type="submit"
-              style={{ backgroundColor: 'rebeccapurple', fontSize: '2em' }}
-              disabled={isSubmitting}
-            >
-              Submit
-            </Button>
+            <Col md={{ size: 1, offset: 9 }}>
+              <Button
+                type="submit"
+                style={{ backgroundColor: 'rebeccapurple', fontSize: '2em' }}
+                disabled={isSubmitting}
+              >
+                Submit
+              </Button>
+            </Col>
           </Col>
         </FormGroup>
       </Form>
