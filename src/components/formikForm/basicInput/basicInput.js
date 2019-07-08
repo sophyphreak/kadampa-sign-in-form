@@ -12,7 +12,7 @@ const BasicInput = ({
   placeholder = ''
 }) => (
   <>
-    <Label for={componentName} style={{ fontSize: '1.5em' }}>
+    <Label for={componentName} style={{ fontSize: '2em' }}>
       {label}
     </Label>
     <Input
@@ -26,7 +26,7 @@ const BasicInput = ({
       onKeyPress={e => {
         e.key === 'Enter' && e.preventDefault();
       }}
-      style={{ fontSize: '1.5em' }}
+      style={{ fontSize: '2em' }}
     />
     <FormFeedback>{error}</FormFeedback>
   </>
