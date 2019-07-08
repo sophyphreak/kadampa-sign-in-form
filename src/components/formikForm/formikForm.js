@@ -25,13 +25,19 @@ const FormikForm = props => (
             </Modal>
             <NameInput error={errors.name} touched={touched.name} />
             <br />
+            <br />
             <EmailInput error={errors.email} touched={touched.email} />
+            <br />
             <br />
             <HeardAboutUsInput value={values.heardAboutUs} />
             <br />
+            <br />
             <AmountPaidInput value={values.amountPaid} />
             <br />
+            <br />
             <PaymentMethodInput value={values.paymentMethod} />
+            <br />
+            <br />
             <br />
             <Button
               type="submit"
