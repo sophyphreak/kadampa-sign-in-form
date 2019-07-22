@@ -1,10 +1,13 @@
 import { convertArrayToCSV } from 'convert-array-to-csv';
+import moment from 'moment';
 
-const getTableQueryString = personList => {
+const makeTableUrl = personList => {
   const arrayOfArrays = convertToArrayOfArrays(personList);
+  console.log(arrayOfArrays);
   const csvString = convertArrayToCSV(arrayOfArrays, {
-    separator: ','
+    separator: ';'
   });
+  console.log(csvString);
   return `https://kadampa-signin.netlify.com/table/?data=${csvString}`;
 };
 
@@ -34,4 +37,4 @@ const convertToArrayOfArrays = personList => {
   return data;
 };
 
-export default getTableQueryString;
+export default makeTableUrl;
