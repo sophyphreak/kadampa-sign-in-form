@@ -4,6 +4,7 @@ import XLSX from 'xlsx';
 import moment from 'moment';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { Button, Table } from 'reactstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const TablePage = () => {
   const getData = () => {
