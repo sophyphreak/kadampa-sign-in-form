@@ -33,7 +33,7 @@ const TablePage = () => {
     `KMC Signins ${moment().format('ddd, MMMM Do')}.xlsx`;
   return (
     <>
-      <CopyToClipboard text={window.location}>
+      <CopyToClipboard text={typeof window !== 'undefined' && window.location}>
         <Button color="primary" style={{ margin: '2em' }}>
           Copy this Url to Clipboard
         </Button>
