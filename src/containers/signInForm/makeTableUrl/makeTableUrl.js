@@ -1,14 +1,12 @@
-import { convertArrayToCSV } from 'convert-array-to-csv';
+import queryString from 'query-string';
 import moment from 'moment';
 
 const makeTableUrl = personList => {
   const arrayOfArrays = convertToArrayOfArrays(personList);
-  console.log(arrayOfArrays);
-  const csvString = convertArrayToCSV(arrayOfArrays, {
-    separator: ';'
+  const query = queryString.stringify(arrayOfArrays, {
+    arrayFormat: 'bracket'
   });
-  console.log(csvString);
-  return `https://kadampa-signin.netlify.com/table/?data=${csvString}`;
+  return `/table/?${query}`;
 };
 
 const convertToArrayOfArrays = personList => {
