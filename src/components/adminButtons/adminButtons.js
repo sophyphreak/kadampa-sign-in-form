@@ -1,22 +1,36 @@
 import React from 'react';
 
 import SeeNamesButton from './seeNamesButton/seeNamesButton';
-import DownloadDataButton from './downloadDataButton/downloadDataButton';
+import DownloadXlsxButton from './downloadXlsxButton/downloadXlsxButton';
 import ClearDataButton from './clearDataButton/clearDataButton';
+import TableQueryButton from './TableQueryButton/TableQueryButton';
 
-const AdminButtons = ({ personList, downloadData, clearState }) => (
+const AdminButtons = ({
+  personList,
+  downloadData,
+  clearState,
+  getTableUrl
+}) => (
   <>
     <SeeNamesButton personList={personList} />
     <br />
     <br />
     <br />
     <br />
-    <DownloadDataButton downloadData={downloadData} />
+    <DownloadXlsxButton downloadData={downloadData} />
+    <br />
+    <br />
+    <br />
+    <br />
+    <TableQueryButton getTableUrl={getTableUrl} />
     <br />
     <br />
     <br />
     <br />
     <ClearDataButton clearState={clearState} />
+    <br />
+    <br />
+    <br />
   </>
 );
 
