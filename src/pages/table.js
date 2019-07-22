@@ -27,14 +27,15 @@ const TablePage = () => {
     data = data.map(row => {
       return [''].concat(row);
     });
-    const filename = getFilename();
+    const lastDay = data[data.length - 1][data[0].length - 1];
+    const filename = getFilename(lastDay);
     const worksheet = XLSX.utils.aoa_to_sheet(data);
     const new_workbook = XLSX.utils.book_new();
     XLSX.utils.book_append_sheet(new_workbook, worksheet, 'SheetJS');
     XLSX.writeFile(new_workbook, filename);
   };
-  const getFilename = () =>
-    `KMC Signins ${moment().format('ddd, MMMM Do')}.xlsx`;
+  const getFilename = lastDay =>
+    `KMC Signins - ${moment(lastDay).format('ddd, MMMM Do')}.xlsx`;
   return (
     <>
       <CopyToClipboard text={typeof window !== 'undefined' && window.location}>
