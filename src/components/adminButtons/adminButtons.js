@@ -1,7 +1,7 @@
 import React from 'react';
 
 import SeeNamesButton from './seeNamesButton/seeNamesButton';
-import DownloadDataButton from './downloadDataButton/downloadDataButton';
+import DownloadXlsxButton from './downloadXlsxButton/downloadXlsxButton';
 import ClearDataButton from './clearDataButton/clearDataButton';
 
 const AdminButtons = ({ personList, downloadData, clearState }) => (
@@ -11,7 +11,7 @@ const AdminButtons = ({ personList, downloadData, clearState }) => (
     <br />
     <br />
     <br />
-    <DownloadDataButton downloadData={downloadData} />
+    <DownloadXlsxButton downloadData={downloadData} />
     <br />
     <br />
     <br />
