@@ -31,9 +31,12 @@ const TablePage = () => {
           } else {
             return (
               <tr>
-                {row.map(cell => (
-                  <td>{cell}</td>
-                ))}
+                {row.map((cell, index) => {
+                  if (!index) {
+                    return <th scope="row">{cell}</th>;
+                  }
+                  return <td>{cell}</td>;
+                })}
               </tr>
             );
           }
