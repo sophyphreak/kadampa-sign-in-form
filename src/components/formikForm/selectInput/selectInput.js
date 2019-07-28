@@ -17,8 +17,8 @@ const SelectInput = ({ value, sectionLabel, selectLabels, componentName }) => (
       name={componentName}
     >
       <option value="">Please select</option>
-      {selectLabels.map(label => (
-        <Select label={label} />
+      {selectLabels.map((label, index) => (
+        <Select label={label} key={index} />
       ))}
     </Input>
     {value === 'Other' && (
