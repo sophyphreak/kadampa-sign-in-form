@@ -4,17 +4,27 @@ import { Button, Table } from 'reactstrap';
 import getData from './getData/getData';
 import downloadXlsx from './downloadXlsx/downloadXlsx';
 
+const buttonStyle = {
+  margin: '2em',
+  fontSize: '1.5em',
+  padding: '1.5em'
+};
+
 const TableComponent = () => {
   return (
     <>
-      <CopyToClipboard text={typeof window !== 'undefined' && window.location}>
-        <Button color="primary" style={{ margin: '2em' }}>
-          Copy this url to clipboard
+      <div style={{ display: 'flex', justifyContent: 'space-around' }}>
+        <CopyToClipboard
+          text={typeof window !== 'undefined' && window.location}
+        >
+          <Button color="primary" style={buttonStyle}>
+            Copy this url to clipboard
+          </Button>
+        </CopyToClipboard>
+        <Button color="success" style={buttonStyle} onClick={downloadXlsx}>
+          Download .xlsx file
         </Button>
-      </CopyToClipboard>
-      <Button color="success" style={{ margin: '2em' }} onClick={downloadXlsx}>
-        Download .xlsx file
-      </Button>
+      </div>
       <Table style={{ margin: '2em' }}>
         {getData().map((row, index) => {
           if (index === 0) {
