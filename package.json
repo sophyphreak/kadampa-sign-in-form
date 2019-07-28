@@ -22,6 +22,7 @@
     "react-copy-to-clipboard": "^5.0.1",
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.1",
+    "react-scroll": "^1.7.12",
     "reactstrap": "^8.0.0",
     "xlsx": "^0.14.3",
     "yup": "^0.27.0"

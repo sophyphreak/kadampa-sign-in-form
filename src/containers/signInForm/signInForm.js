@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { animateScroll } from 'react-scroll';
 
 import FormikForm from '../../components/formikForm/formikForm';
 import signInSchema from './signInSchema';
@@ -35,8 +36,8 @@ class SignInForm extends Component {
     localStorage.setItem('personList', JSON.stringify(personList));
     setTimeout(() => {
       this.setState({ successModal: false });
+      animateScroll.scrollToTop({ duration: 500 });
     }, 1500);
-    window.scrollTo(0, 0);
   }
   clearState() {
     const oldLists = getLocalStorage('oldLists');
