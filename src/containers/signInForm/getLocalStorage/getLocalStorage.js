@@ -1,5 +1,6 @@
 const getLocalStorage = itemName => {
-  const item = window && JSON.parse(localStorage.getItem(itemName));
+  const item =
+    typeof window === 'undefined' && JSON.parse(localStorage.getItem(itemName));
   if (!item) {
     return [];
   }
