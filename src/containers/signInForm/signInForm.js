@@ -8,7 +8,7 @@ import AdminButtons from '../../components/adminButtons/adminButtons';
 import formInitialValues from './formInitialValues';
 import getLocalStorage from './getLocalStorage/getLocalStorage';
 import preparePerson from './preparePerson';
-import makeTableUrl from './makeTableUrl/makeTableUrl';
+import makeTableUrl from '../../commonFunctions/makeTableUrl/makeTableUrl';
 
 class SignInForm extends Component {
   constructor(props) {
