@@ -1,7 +1,7 @@
 import React from 'react';
 
 import ClearDataButton from './clearDataButton/clearDataButton';
-import TableQueryButton from '../GoToTableButton/GoToTableButton';
+import TableQueryButton from '../goToTableButton/goToTableButton';
 
 const AdminButtons = ({ clearState, getTableUrl }) => (
   <>

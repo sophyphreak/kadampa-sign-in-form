@@ -1,6 +1,6 @@
 import React from 'react';
 import { Col } from 'reactstrap';
-import GoToTableButton from '../GoToTableButton/GoToTableButton';
+import GoToTableButton from '../goToTableButton/goToTableButton';
 
 import getLocalStorage from '../../containers/signInForm/getLocalStorage/getLocalStorage';
 import makeTableUrl from '../../commonFunctions/makeTableUrl/makeTableUrl';
