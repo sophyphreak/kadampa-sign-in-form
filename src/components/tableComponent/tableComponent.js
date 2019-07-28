@@ -27,18 +27,17 @@ const TableComponent = () => {
                 </tr>
               </thead>
             );
-          } else {
-            return (
-              <tr>
-                {row.map((cell, index) => {
-                  if (!index) {
-                    return <th scope="row">{cell}</th>;
-                  }
-                  return <td>{cell}</td>;
-                })}
-              </tr>
-            );
           }
+          return (
+            <tr>
+              {row.map((cell, index) => {
+                if (!index) {
+                  return <th scope="row">{cell}</th>;
+                }
+                return <td>{cell}</td>;
+              })}
+            </tr>
+          );
         })}
       </Table>
     </>
