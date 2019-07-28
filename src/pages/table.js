@@ -40,11 +40,11 @@ const TablePage = () => {
     <>
       <CopyToClipboard text={typeof window !== 'undefined' && window.location}>
         <Button color="primary" style={{ margin: '2em' }}>
-          Copy this Url to Clipboard
+          Copy this url to clipboard
         </Button>
       </CopyToClipboard>
       <Button color="success" style={{ margin: '2em' }} onClick={downloadXlsx}>
-        Download .xlsx
+        Download .xlsx file
       </Button>
       <Table style={{ margin: '2em' }}>
         {getData().map((row, index) => {
