@@ -3,8 +3,12 @@ import { Button } from 'reactstrap';
 
 const LinkToTable = props => (
   <>
-    <Button color="link">
-      <a href={`${props.getTableUrl()}`}>Go to data table</a>
+    <Button
+      color="primary"
+      href={`${props.getTableUrl()}`}
+      style={{ padding: '1.5em', fontSize: '1.5em' }}
+    >
+      Go to data table
     </Button>
   </>
 );

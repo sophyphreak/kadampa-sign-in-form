@@ -3,7 +3,6 @@ import { animateScroll } from 'react-scroll';
 
 import FormikForm from '../../components/formikForm/formikForm';
 import signInSchema from './signInSchema';
-import downloadXlsx from './downloadXlsx/downloadXlsx';
 import BigSpace from '../../components/bigSpace/bigSpace';
 import AdminButtons from '../../components/adminButtons/adminButtons';
 import formInitialValues from './formInitialValues';
@@ -20,7 +19,6 @@ class SignInForm extends Component {
     };
     this.addSignIn = this.addSignIn.bind(this);
     this.clearState = this.clearState.bind(this);
-    this.downloadData = this.downloadData.bind(this);
     this.getTableUrl = this.getTableUrl.bind(this);
   }
   componentDidMount() {
@@ -48,10 +46,6 @@ class SignInForm extends Component {
     localStorage.setItem('personList', JSON.stringify(personList));
     localStorage.setItem('oldLists', JSON.stringify(oldLists));
   }
-  downloadData() {
-    const personList = this.state.personList;
-    downloadXlsx(personList);
-  }
   getTableUrl() {
     const personList = this.state.personList;
     const tableUrl = makeTableUrl(personList);
@@ -72,8 +66,6 @@ class SignInForm extends Component {
         />
         <BigSpace />
         <AdminButtons
-          personList={this.state.personList}
-          downloadData={this.downloadData}
           clearState={this.clearState}
           getTableUrl={this.getTableUrl}
         />

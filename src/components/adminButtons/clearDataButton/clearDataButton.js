@@ -31,7 +31,11 @@ class ClearStateButton extends Component {
   render() {
     return (
       <div>
-        <Button color="warning" onClick={() => this.toggleClearDataModal()}>
+        <Button
+          color="warning"
+          onClick={() => this.toggleClearDataModal()}
+          style={{ padding: '1.5em', fontSize: '1.5em' }}
+        >
           Clear data
         </Button>
         <ClearDataModal
