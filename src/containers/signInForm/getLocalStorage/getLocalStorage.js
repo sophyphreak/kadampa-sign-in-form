@@ -1,8 +1,9 @@
 const getLocalStorage = itemName => {
-  if (!JSON.parse(localStorage.getItem(itemName))) {
+  const item = window && JSON.parse(localStorage.getItem(itemName));
+  if (!item) {
     return [];
   }
-  return JSON.parse(localStorage.getItem(itemName));
+  return item;
 };
 
 export default getLocalStorage;
