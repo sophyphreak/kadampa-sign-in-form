@@ -2,7 +2,7 @@ export default {
   name: '',
   email: '',
   heardAboutUs: '',
-  amountPaid: '$10',
+  amountPaid: '$12',
   paymentMethod: 'Cash',
   other: {
     heardAboutUs: '',
