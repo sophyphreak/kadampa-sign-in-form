@@ -1,10 +1,7 @@
 import React from 'react';
 import { Button } from 'reactstrap';
-import downloadXlsx from '../tableComponent/downloadXlsx/downloadXlsx';
+import downloadXlsx from './downloadXlsx/downloadXlsx';
 import moment from 'moment';
-
-import ClearDataButton from './clearDataButton/clearDataButton';
-import TableQueryButton from '../goToTableButton/goToTableButton';
 
 const AdminButtons = ({ clearState, getTableUrl, personList }) => (
   <>

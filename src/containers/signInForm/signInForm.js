@@ -8,7 +8,6 @@ import AdminButtons from '../../components/adminButtons/adminButtons';
 import formInitialValues from './formInitialValues';
 import getLocalStorage from './getLocalStorage/getLocalStorage';
 import preparePerson from './preparePerson';
-import makeTableUrl from '../../commonFunctions/makeTableUrl/makeTableUrl';
 
 class SignInForm extends Component {
   constructor(props) {
@@ -18,8 +17,6 @@ class SignInForm extends Component {
       successModal: false
     };
     this.addSignIn = this.addSignIn.bind(this);
-    this.clearState = this.clearState.bind(this);
-    this.getTableUrl = this.getTableUrl.bind(this);
   }
   componentDidMount() {
     const personList = getLocalStorage('personList');
@@ -37,20 +34,6 @@ class SignInForm extends Component {
       animateScroll.scrollToTop({ duration: 500 });
     }, 1500);
   }
-  clearState() {
-    const oldLists = getLocalStorage('oldLists');
-    oldLists.push(...this.state.personList);
-    const personList = [];
-    this.setState(() => ({ personList }));
-    localStorage.clear();
-    localStorage.setItem('personList', JSON.stringify(personList));
-    localStorage.setItem('oldLists', JSON.stringify(oldLists));
-  }
-  getTableUrl() {
-    const personList = this.state.personList;
-    const tableUrl = makeTableUrl(personList);
-    return tableUrl;
-  }
   render() {
     return (
       <>
@@ -65,11 +48,7 @@ class SignInForm extends Component {
           successModal={this.state.successModal}
         />
         <BigSpace />
-        <AdminButtons
-          clearState={this.clearState}
-          getTableUrl={this.getTableUrl}
-          personList={this.state.personList}
-        />
+        <AdminButtons personList={this.state.personList} />
       </>
     );
   }
