@@ -18,7 +18,8 @@ const convertToArrayOfArrays = personList => {
       'Hear About Us',
       'Amount Paid',
       'Payment Method',
-      'Date'
+      'Date',
+      'Time'
     ]
   ];
   personList.forEach((person, index) => {
@@ -29,7 +30,8 @@ const convertToArrayOfArrays = personList => {
       person.heardAboutUs,
       person.amountPaid,
       person.paymentMethod,
-      moment(person.date).format('ddd, MMMM D, YYYY')
+      moment(person.date).format('ddd, MMMM D, YYYY'),
+      moment(person.date).format('h:mm a')
     ]);
   });
   return data;

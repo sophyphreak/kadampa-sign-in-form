@@ -2,6 +2,7 @@ import React from 'react';
 import SelectInput from '../selectInput/selectInput';
 
 const selectLabels = [
+  'Attended KMC Houston before',
   'Flyer',
   'Facebook/Instagram',
   'Meetup',
@@ -9,7 +10,6 @@ const selectLabels = [
   'Google search',
   'Friend/Family',
   'Walk by',
-  'Attended KMC Houston before',
   'Other'
 ];
 
