@@ -9,11 +9,13 @@ import formInitialValues from './formInitialValues';
 import getLocalStorage from './getLocalStorage/getLocalStorage';
 import preparePerson from './preparePerson';
 import makeTableUrl from '../../commonFunctions/makeTableUrl/makeTableUrl';
+import downloadXlsx from '../../components/tableComponent/downloadXlsx/downloadXlsx';
 
 class SignInForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      oldLists: [],
       personList: [],
       successModal: false
     };
@@ -23,7 +25,8 @@ class SignInForm extends Component {
   }
   componentDidMount() {
     const personList = getLocalStorage('personList');
-    this.setState(() => ({ personList }));
+    const oldLists = getLocalStorage('oldLists');
+    this.setState(() => ({ personList, oldLists }));
   }
   addSignIn(person) {
     this.setState({ successModal: true });
@@ -54,6 +57,7 @@ class SignInForm extends Component {
   render() {
     return (
       <>
+        <button onClick={() => downloadXlsx(this.state.oldLists)}>click me</button>
         <FormikForm
           initialValues={formInitialValues}
           validationSchema={signInSchema}
