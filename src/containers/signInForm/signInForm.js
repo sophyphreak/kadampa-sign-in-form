@@ -4,7 +4,7 @@ import { animateScroll } from 'react-scroll';
 import FormikForm from '../../components/formikForm/formikForm';
 import signInSchema from './signInSchema';
 import BigSpace from '../../components/bigSpace/bigSpace';
-import AdminButtons from '../../components/adminButtons/adminButtons';
+import AdminButtons from '../../components/downloadButtons/downloadButtons';
 import formInitialValues from './formInitialValues';
 import getLocalStorage from './getLocalStorage/getLocalStorage';
 import preparePerson from './preparePerson';
