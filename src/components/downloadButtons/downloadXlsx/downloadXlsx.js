@@ -14,7 +14,7 @@ const downloadXlsx = personList => {
 const convertToArrayOfArrays = personList => {
   console.log(personList);
   const data = [
-    Array(9),
+    Array(10),
     [
       '',
       '#',
@@ -23,10 +23,11 @@ const convertToArrayOfArrays = personList => {
       'Hear About Us',
       'Amount Paid',
       'Payment Method',
-      'Date',
-      'Time'
+      'Day',
+      'Time',
+      'Date'
     ],
-    Array(9)
+    Array(10)
   ];
   personList.forEach((person, index) => {
     data.push([
@@ -37,8 +38,9 @@ const convertToArrayOfArrays = personList => {
       person.heardAboutUs,
       person.amountPaid,
       person.paymentMethod,
-      moment(person.date).format('ddd, MMMM D, YYYY'),
-      moment(person.date).format('h:mm a')
+      moment(person.date).format('dddd'),
+      moment(person.date).format('h:mm a'),
+      moment(person.date).format('MMMM D, YYYY')
     ]);
   });
   return data;
