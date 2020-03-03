@@ -3,8 +3,7 @@ import moment from 'moment';
 
 const downloadXlsx = personList => {
   const data = convertToArrayOfArrays(personList);
-  const lastDay = data[data.length - 1][data[0].length - 1];
-  const filename = getFilename(lastDay);
+  const filename = getFilename();
   const worksheet = XLSX.utils.aoa_to_sheet(data);
   const new_workbook = XLSX.utils.book_new();
   XLSX.utils.book_append_sheet(new_workbook, worksheet, 'SheetJS');
@@ -46,7 +45,7 @@ const convertToArrayOfArrays = personList => {
   return data;
 };
 
-const getFilename = lastDay =>
-  `KMC Signins - ${moment(lastDay).format('ddd, MMMM Do')}.xlsx`;
+const getFilename = () =>
+  `KMC Signins - ${moment().format('ddd, MMMM Do [at] ha')}.xlsx`;
 
 export default downloadXlsx;
