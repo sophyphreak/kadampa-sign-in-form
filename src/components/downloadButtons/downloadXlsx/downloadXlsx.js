@@ -46,6 +46,6 @@ const convertToArrayOfArrays = personList => {
 };
 
 const getFilename = () =>
-  `KMC Signins - ${moment().format('ddd, MMMM Do [at] ha')}.xlsx`;
+  `KMC Signins - ${moment().format('ddd, MMMM Do [at] h:mm a')}.xlsx`;
 
 export default downloadXlsx;
